@@ -233,22 +233,21 @@ function App() {
             <FadeIn>
               <div className="glass-panel" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', overflow: 'hidden' }}>
                 <div style={{ padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Choba</h3>
+                  <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Digital Ghalla Mandi</h3>
                   <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
-                    Formerly known as Dhaan Bazaar, Choba is a comprehensive agricultural marketplace application connecting farmers with buyers.
+                    A comprehensive agricultural marketplace application connecting farmers with buyers to easily trade crops.
                   </p>
                   <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
                     <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(59, 130, 246, 0.1)', color: 'var(--accent-primary)', borderRadius: '20px', fontSize: '0.85rem' }}>Flutter</span>
-                    <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(255, 255, 255, 0.1)', color: '#fff', borderRadius: '20px', fontSize: '0.85rem' }}>REST API</span>
+                    <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(0, 0, 0, 0.05)', color: 'var(--text-primary)', borderRadius: '20px', fontSize: '0.85rem' }}>REST API</span>
                     <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(139, 92, 246, 0.1)', color: 'var(--accent-secondary)', borderRadius: '20px', fontSize: '0.85rem' }}>E-commerce</span>
                   </div>
                   <div>
                     <a href="#" className="btn-secondary">View Details</a>
                   </div>
                 </div>
-                <div style={{ background: 'linear-gradient(45deg, #1e1e1e, #2a2a2a)', minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                   {/* Placeholder for project image */}
-                   <Smartphone size={80} color="rgba(255,255,255,0.1)" />
+                <div style={{ background: '#f0f0f0', minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                   <img src="/dgm-logo.jpeg" alt="Digital Ghalla Mandi Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
               </div>
             </FadeIn>
