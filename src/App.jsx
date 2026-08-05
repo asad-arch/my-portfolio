@@ -224,13 +224,13 @@ function App() {
             {/* Project 1 */}
             <FadeIn>
               <div className="brutalist-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', overflow: 'hidden' }}>
-                <div style={{ background: 'var(--color-yellow)', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: 'var(--border-thick)' }}>
-                   <Smartphone size={100} color="#1A1A1A" />
+                <div style={{ background: '#fff', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: 'var(--border-thick)' }}>
+                   <img src="/hyperchat-logo.png" alt="HyperChat Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: '#fff' }}>
-                  <h3 className="shrikhand" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Hyper Local Chat App</h3>
+                  <h3 className="shrikhand" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>HyperChat</h3>
                   <p style={{ fontWeight: '600', fontSize: '1.1rem', marginBottom: '2rem' }}>
-                    A location-based social application where users nearby can discover each other and chat seamlessly without sharing phone numbers.
+                    A Flutter-based hyper-local messaging application that enables users to discover and communicate with nearby people through real-time chat, voice notes, and location-based services using Firebase.
                   </p>
                   <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
                     <span style={{ padding: '0.5rem 1rem', background: 'var(--color-blue)', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Flutter</span>
@@ -249,17 +249,17 @@ function App() {
                 <div style={{ padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: '#fff', borderRight: 'var(--border-thick)' }}>
                   <h3 className="shrikhand" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Digital Ghalla Mandi</h3>
                   <p style={{ fontWeight: '600', fontSize: '1.1rem', marginBottom: '2rem' }}>
-                    A comprehensive agricultural marketplace application connecting farmers with buyers to easily trade crops.
+                    A digital agricultural marketplace built with Flutter and Firebase that connects farmers and buyers, enabling online crop listings, price discovery, and direct communication.
                   </p>
                   <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
                     <span style={{ padding: '0.5rem 1rem', background: 'var(--color-blue)', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Flutter</span>
-                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-yellow)', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>REST API</span>
+                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-yellow)', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Firebase</span>
                   </div>
                   <div>
                     <a href="#" className="btn-primary" style={{ background: 'var(--color-purple)', color: '#fff' }}>View Details</a>
                   </div>
                 </div>
-                <div style={{ background: '#f0f0f0', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                <div style={{ background: '#fff', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
                    <img src="/dgm-logo.jpeg" alt="Digital Ghalla Mandi Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
               </div>
@@ -268,13 +268,13 @@ function App() {
             {/* Project 3 */}
             <FadeIn>
               <div className="brutalist-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', overflow: 'hidden' }}>
-                <div style={{ background: 'var(--color-blue)', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: 'var(--border-thick)' }}>
-                   <Smartphone size={100} color="#1A1A1A" />
+                <div style={{ background: '#fff', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: 'var(--border-thick)' }}>
+                   <img src="/mypakistan-logo.jpg" alt="My Pakistan Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
                 <div style={{ padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: '#fff' }}>
                   <h3 className="shrikhand" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>My Pakistan</h3>
                   <p style={{ fontWeight: '600', fontSize: '1.1rem', marginBottom: '2rem' }}>
-                    A Flutter application connected with Firebase designed for local audiences with real-time updates and interactive features.
+                    A Flutter mobile application that centralizes government information, emergency contacts, and public services, providing Pakistani citizens with easy access to essential resources.
                   </p>
                   <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
                     <span style={{ padding: '0.5rem 1rem', background: 'var(--color-blue)', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Flutter</span>
