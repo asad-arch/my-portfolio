@@ -40,10 +40,11 @@ function App() {
           top: 0,
           left: 0,
           right: 0,
-          height: "4px",
-          background: "linear-gradient(135deg, var(--accent-primary), var(--accent-secondary))",
+          height: "8px",
+          background: "var(--color-pink)",
           transformOrigin: "0%",
-          zIndex: 100
+          zIndex: 100,
+          borderBottom: "3px solid #1A1A1A"
         }}
       />
 
@@ -52,44 +53,46 @@ function App() {
         position: 'fixed',
         top: 0,
         width: '100%',
-        padding: '1.5rem 0',
+        padding: '1rem 0',
         zIndex: 50,
-        background: 'rgba(10, 10, 10, 0.8)',
-        backdropFilter: 'blur(10px)',
-        borderBottom: '1px solid var(--glass-border)'
+        background: 'var(--color-yellow)',
+        borderBottom: 'var(--border-thick)',
+        boxShadow: '0 4px 0 #1A1A1A'
       }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div style={{ fontSize: '1.5rem', fontWeight: '800' }} className="gradient-text">AA.</div>
+          <div style={{ fontSize: '2rem', fontWeight: '800', color: '#1A1A1A' }} className="shrikhand">AA.</div>
           <ul style={{ display: 'flex', gap: '2rem', display: window.innerWidth < 768 ? 'none' : 'flex' }}>
-            <li><a href="#about" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }} onMouseOver={e=>e.target.style.color='#fff'} onMouseOut={e=>e.target.style.color='var(--text-secondary)'}>About</a></li>
-            <li><a href="#skills" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }} onMouseOver={e=>e.target.style.color='#fff'} onMouseOut={e=>e.target.style.color='var(--text-secondary)'}>Skills</a></li>
-            <li><a href="#projects" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }} onMouseOver={e=>e.target.style.color='#fff'} onMouseOut={e=>e.target.style.color='var(--text-secondary)'}>Projects</a></li>
-            <li><a href="#experience" style={{ color: 'var(--text-secondary)', transition: 'color 0.3s' }} onMouseOver={e=>e.target.style.color='#fff'} onMouseOut={e=>e.target.style.color='var(--text-secondary)'}>Experience</a></li>
+            <li><a href="#about" style={{ fontWeight: '700', textTransform: 'uppercase', transition: 'transform 0.2s' }} onMouseOver={e=>e.target.style.transform='translateY(-2px)'} onMouseOut={e=>e.target.style.transform='none'}>About</a></li>
+            <li><a href="#skills" style={{ fontWeight: '700', textTransform: 'uppercase', transition: 'transform 0.2s' }} onMouseOver={e=>e.target.style.transform='translateY(-2px)'} onMouseOut={e=>e.target.style.transform='none'}>Skills</a></li>
+            <li><a href="#projects" style={{ fontWeight: '700', textTransform: 'uppercase', transition: 'transform 0.2s' }} onMouseOver={e=>e.target.style.transform='translateY(-2px)'} onMouseOut={e=>e.target.style.transform='none'}>Projects</a></li>
+            <li><a href="#experience" style={{ fontWeight: '700', textTransform: 'uppercase', transition: 'transform 0.2s' }} onMouseOver={e=>e.target.style.transform='translateY(-2px)'} onMouseOut={e=>e.target.style.transform='none'}>Experience</a></li>
           </ul>
-          <a href="#contact" className="btn-primary" style={{ padding: '0.5rem 1rem', fontSize: '0.9rem' }}>Hire Me</a>
+          <a href="#contact" className="btn-primary" style={{ padding: '0.5rem 1.5rem', fontSize: '1rem' }}>Hire Me</a>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="hero" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '80px' }}>
+      <section id="hero" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', paddingTop: '100px', background: 'var(--bg-primary)' }}>
         <div className="container">
-          <div style={{ maxWidth: '800px' }}>
+          <div style={{ maxWidth: '900px' }}>
             <FadeIn>
-              <h2 style={{ color: 'var(--accent-primary)', fontWeight: '600', marginBottom: '1rem', letterSpacing: '2px', textTransform: 'uppercase' }}>Hello, I'm</h2>
+              <h2 style={{ color: 'var(--text-primary)', fontWeight: '700', marginBottom: '1rem', letterSpacing: '4px', textTransform: 'uppercase', background: 'var(--color-yellow)', display: 'inline-block', padding: '0.5rem 1rem', border: 'var(--border-thick)', boxShadow: '4px 4px 0 #1A1A1A', transform: 'rotate(-2deg)' }}>Hello, I'm</h2>
             </FadeIn>
             <FadeIn delay={0.1}>
-              <h1 style={{ fontSize: 'clamp(3rem, 8vw, 5rem)', fontWeight: '800', lineHeight: '1.1', marginBottom: '1.5rem' }}>
-                Ahmad Asad. <br />
-                <span className="gradient-text">I build mobile apps & robust backends.</span>
+              <h1 style={{ fontSize: 'clamp(4rem, 10vw, 7rem)', lineHeight: '1', margin: '2rem 0', color: 'var(--color-pink)', textShadow: '6px 6px 0px #1A1A1A' }} className="shrikhand">
+                Ahmad Asad.
               </h1>
+              <h2 style={{ fontSize: 'clamp(2rem, 5vw, 3.5rem)', fontWeight: '800', lineHeight: '1.2', marginBottom: '2rem' }}>
+                I build mobile apps & <span style={{ background: 'var(--color-blue)', padding: '0 1rem', border: 'var(--border-thick)', boxShadow: '6px 6px 0 #1A1A1A' }}>robust backends.</span>
+              </h2>
             </FadeIn>
             <FadeIn delay={0.2}>
-              <p style={{ fontSize: '1.2rem', color: 'var(--text-secondary)', marginBottom: '2.5rem', maxWidth: '600px' }}>
+              <p style={{ fontSize: '1.4rem', fontWeight: '600', color: 'var(--text-secondary)', marginBottom: '3rem', maxWidth: '700px', borderLeft: 'var(--border-thick)', paddingLeft: '1.5rem', borderColor: 'var(--color-purple)' }}>
                 A passionate Flutter and Full-Stack Developer based in Lahore, Pakistan. I specialize in building beautiful, high-performance applications with Firebase and modern web technologies.
               </p>
             </FadeIn>
             <FadeIn delay={0.3}>
-              <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
                 <a href="#projects" className="btn-primary">View My Work</a>
                 <a href="#contact" className="btn-secondary">Let's Talk</a>
               </div>
@@ -99,46 +102,53 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" style={{ background: 'var(--bg-secondary)' }}>
+      <section id="about" style={{ background: 'var(--color-blue)', borderTop: 'var(--border-thick)', borderBottom: 'var(--border-thick)' }}>
         <div className="container">
           <FadeIn>
-            <h2 className="section-title">About Me</h2>
+            <h2 className="section-title" style={{ color: '#fff' }}>About Me</h2>
           </FadeIn>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem', alignItems: 'center' }}>
             <FadeIn direction="right">
-              <div className="glass-panel" style={{ padding: '2rem', position: 'relative' }}>
-                <div style={{ position: 'absolute', top: '-10px', left: '-10px', width: '40px', height: '40px', borderTop: '4px solid var(--accent-primary)', borderLeft: '4px solid var(--accent-primary)' }}></div>
-                <div style={{ position: 'absolute', bottom: '-10px', right: '-10px', width: '40px', height: '40px', borderBottom: '4px solid var(--accent-secondary)', borderRight: '4px solid var(--accent-secondary)' }}></div>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}><User size={24} color="var(--accent-primary)" /> My Journey</h3>
-                <p style={{ color: 'var(--text-secondary)', marginBottom: '1rem' }}>
+              <div className="brutalist-card" style={{ padding: '3rem', position: 'relative', background: 'var(--color-yellow)' }}>
+                <div style={{ position: 'absolute', top: '-15px', left: '-15px', background: 'var(--color-pink)', padding: '1rem', border: 'var(--border-thick)', borderRadius: '50%', boxShadow: '4px 4px 0 #1A1A1A' }}>
+                  <User size={32} color="#1A1A1A" />
+                </div>
+                <h3 className="shrikhand" style={{ fontSize: '2rem', marginBottom: '1.5rem', marginTop: '1rem' }}>My Journey</h3>
+                <p style={{ fontWeight: '600', marginBottom: '1.5rem', fontSize: '1.1rem' }}>
                   Originally from Nankana Sahib, I hold a BS in Information Technology from Baba Guru Nanak University. I relocated to Lahore to immerse myself in the tech ecosystem and pursue my goal of building my own software company.
                 </p>
-                <p style={{ color: 'var(--text-secondary)' }}>
+                <p style={{ fontWeight: '600', fontSize: '1.1rem' }}>
                   Beyond coding, I'm deeply interested in AI, startups, and productivity. I'm constantly learning new technologies to deliver cutting-edge solutions for international clients on platforms like Upwork and Fiverr.
                 </p>
               </div>
             </FadeIn>
             <FadeIn direction="left" delay={0.2}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
-                <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <MapPin size={32} color="var(--accent-secondary)" />
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+                <div className="brutalist-card" style={{ padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem', background: '#fff' }}>
+                  <div style={{ background: 'var(--color-pink)', padding: '1rem', border: 'var(--border-thick)', borderRadius: '12px', boxShadow: '4px 4px 0 #1A1A1A' }}>
+                    <MapPin size={32} color="#1A1A1A" />
+                  </div>
                   <div>
-                    <h4 style={{ fontWeight: '600' }}>Location</h4>
-                    <p style={{ color: 'var(--text-secondary)' }}>Lahore, Pakistan</p>
+                    <h4 className="shrikhand" style={{ fontSize: '1.5rem' }}>Location</h4>
+                    <p style={{ fontWeight: '700', fontSize: '1.1rem' }}>Lahore, Pakistan</p>
                   </div>
                 </div>
-                <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <Briefcase size={32} color="var(--accent-primary)" />
+                <div className="brutalist-card" style={{ padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem', background: '#fff' }}>
+                  <div style={{ background: 'var(--color-yellow)', padding: '1rem', border: 'var(--border-thick)', borderRadius: '12px', boxShadow: '4px 4px 0 #1A1A1A' }}>
+                    <Briefcase size={32} color="#1A1A1A" />
+                  </div>
                   <div>
-                    <h4 style={{ fontWeight: '600' }}>Goal</h4>
-                    <p style={{ color: 'var(--text-secondary)' }}>Successful Freelancer & Founder</p>
+                    <h4 className="shrikhand" style={{ fontSize: '1.5rem' }}>Goal</h4>
+                    <p style={{ fontWeight: '700', fontSize: '1.1rem' }}>Successful Freelancer & Founder</p>
                   </div>
                 </div>
-                <div className="glass-panel" style={{ padding: '1.5rem', display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <Code2 size={32} color="var(--accent-secondary)" />
+                <div className="brutalist-card" style={{ padding: '2rem', display: 'flex', alignItems: 'center', gap: '1.5rem', background: '#fff' }}>
+                  <div style={{ background: 'var(--color-purple)', padding: '1rem', border: 'var(--border-thick)', borderRadius: '12px', boxShadow: '4px 4px 0 #1A1A1A' }}>
+                    <Code2 size={32} color="#fff" />
+                  </div>
                   <div>
-                    <h4 style={{ fontWeight: '600' }}>Focus</h4>
-                    <p style={{ color: 'var(--text-secondary)' }}>Flutter & Full-Stack</p>
+                    <h4 className="shrikhand" style={{ fontSize: '1.5rem' }}>Focus</h4>
+                    <p style={{ fontWeight: '700', fontSize: '1.1rem' }}>Flutter & Full-Stack</p>
                   </div>
                 </div>
               </div>
@@ -151,44 +161,50 @@ function App() {
       <section id="skills">
         <div className="container">
           <FadeIn>
-            <h2 className="section-title">Technical Expertise</h2>
+            <h2 className="section-title" style={{ color: 'var(--color-purple)' }}>Technical Expertise</h2>
           </FadeIn>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem' }}>
             
             <FadeIn delay={0.1}>
-              <div className="glass-panel" style={{ padding: '2rem', height: '100%', transition: 'transform 0.3s' }} onMouseOver={e=>e.currentTarget.style.transform='translateY(-10px)'} onMouseOut={e=>e.currentTarget.style.transform='none'}>
-                <Smartphone size={40} color="var(--accent-primary)" style={{ marginBottom: '1.5rem' }} />
-                <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Mobile Development</h3>
-                <ul style={{ color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:'6px',height:'6px',borderRadius:'50%',background:'var(--accent-primary)'}}></div> Flutter</li>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:'6px',height:'6px',borderRadius:'50%',background:'var(--accent-primary)'}}></div> Dart</li>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:'6px',height:'6px',borderRadius:'50%',background:'var(--accent-primary)'}}></div> Responsive UI</li>
+              <div className="brutalist-card" style={{ padding: '3rem', height: '100%', background: 'var(--color-pink)' }}>
+                <div style={{ background: '#fff', display: 'inline-block', padding: '1rem', border: 'var(--border-thick)', borderRadius: '12px', boxShadow: '4px 4px 0 #1A1A1A', marginBottom: '2rem', transform: 'rotate(-5deg)' }}>
+                  <Smartphone size={48} color="#1A1A1A" />
+                </div>
+                <h3 className="shrikhand" style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#fff', textShadow: '2px 2px 0 #1A1A1A' }}>Mobile Dev</h3>
+                <ul style={{ fontWeight: '700', fontSize: '1.2rem', display: 'flex', flexDirection: 'column', gap: '1rem', color: '#1A1A1A' }}>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}><div style={{width:'12px',height:'12px',border:'2px solid #1A1A1A',background:'#fff'}}></div> Flutter</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}><div style={{width:'12px',height:'12px',border:'2px solid #1A1A1A',background:'#fff'}}></div> Dart</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}><div style={{width:'12px',height:'12px',border:'2px solid #1A1A1A',background:'#fff'}}></div> Responsive UI</li>
                 </ul>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.2}>
-              <div className="glass-panel" style={{ padding: '2rem', height: '100%', transition: 'transform 0.3s' }} onMouseOver={e=>e.currentTarget.style.transform='translateY(-10px)'} onMouseOut={e=>e.currentTarget.style.transform='none'}>
-                <Database size={40} color="var(--accent-secondary)" style={{ marginBottom: '1.5rem' }} />
-                <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Backend & Cloud</h3>
-                <ul style={{ color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:'6px',height:'6px',borderRadius:'50%',background:'var(--accent-secondary)'}}></div> Firebase Authentication</li>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:'6px',height:'6px',borderRadius:'50%',background:'var(--accent-secondary)'}}></div> Cloud Firestore</li>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:'6px',height:'6px',borderRadius:'50%',background:'var(--accent-secondary)'}}></div> Firebase Storage</li>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:'6px',height:'6px',borderRadius:'50%',background:'var(--accent-secondary)'}}></div> Cloud Messaging</li>
+              <div className="brutalist-card" style={{ padding: '3rem', height: '100%', background: 'var(--color-yellow)' }}>
+                <div style={{ background: '#fff', display: 'inline-block', padding: '1rem', border: 'var(--border-thick)', borderRadius: '12px', boxShadow: '4px 4px 0 #1A1A1A', marginBottom: '2rem', transform: 'rotate(5deg)' }}>
+                  <Database size={48} color="#1A1A1A" />
+                </div>
+                <h3 className="shrikhand" style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#1A1A1A', textShadow: '2px 2px 0 #fff' }}>Backend & Cloud</h3>
+                <ul style={{ fontWeight: '700', fontSize: '1.2rem', display: 'flex', flexDirection: 'column', gap: '1rem', color: '#1A1A1A' }}>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}><div style={{width:'12px',height:'12px',border:'2px solid #1A1A1A',background:'#fff'}}></div> Firebase Auth</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}><div style={{width:'12px',height:'12px',border:'2px solid #1A1A1A',background:'#fff'}}></div> Cloud Firestore</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}><div style={{width:'12px',height:'12px',border:'2px solid #1A1A1A',background:'#fff'}}></div> Firebase Storage</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}><div style={{width:'12px',height:'12px',border:'2px solid #1A1A1A',background:'#fff'}}></div> Cloud Messaging</li>
                 </ul>
               </div>
             </FadeIn>
 
             <FadeIn delay={0.3}>
-              <div className="glass-panel" style={{ padding: '2rem', height: '100%', transition: 'transform 0.3s' }} onMouseOver={e=>e.currentTarget.style.transform='translateY(-10px)'} onMouseOut={e=>e.currentTarget.style.transform='none'}>
-                <Terminal size={40} color="var(--accent-primary)" style={{ marginBottom: '1.5rem' }} />
-                <h3 style={{ fontSize: '1.3rem', marginBottom: '1rem' }}>Other Technologies</h3>
-                <ul style={{ color: 'var(--text-secondary)', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:'6px',height:'6px',borderRadius:'50%',background:'var(--accent-primary)'}}></div> REST APIs</li>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:'6px',height:'6px',borderRadius:'50%',background:'var(--accent-primary)'}}></div> Git & GitHub</li>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:'6px',height:'6px',borderRadius:'50%',background:'var(--accent-primary)'}}></div> UI/UX Design Basics</li>
-                  <li style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{width:'6px',height:'6px',borderRadius:'50%',background:'var(--accent-primary)'}}></div> Basic Laravel & WordPress</li>
+              <div className="brutalist-card" style={{ padding: '3rem', height: '100%', background: 'var(--color-purple)' }}>
+                <div style={{ background: '#fff', display: 'inline-block', padding: '1rem', border: 'var(--border-thick)', borderRadius: '12px', boxShadow: '4px 4px 0 #1A1A1A', marginBottom: '2rem', transform: 'rotate(-5deg)' }}>
+                  <Terminal size={48} color="#1A1A1A" />
+                </div>
+                <h3 className="shrikhand" style={{ fontSize: '2rem', marginBottom: '1.5rem', color: '#fff', textShadow: '2px 2px 0 #1A1A1A' }}>Other Tech</h3>
+                <ul style={{ fontWeight: '700', fontSize: '1.2rem', display: 'flex', flexDirection: 'column', gap: '1rem', color: '#fff' }}>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}><div style={{width:'12px',height:'12px',border:'2px solid #1A1A1A',background:'var(--color-yellow)'}}></div> REST APIs</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}><div style={{width:'12px',height:'12px',border:'2px solid #1A1A1A',background:'var(--color-yellow)'}}></div> Git & GitHub</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}><div style={{width:'12px',height:'12px',border:'2px solid #1A1A1A',background:'var(--color-yellow)'}}></div> UI/UX Basics</li>
+                  <li style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}><div style={{width:'12px',height:'12px',border:'2px solid #1A1A1A',background:'var(--color-yellow)'}}></div> Laravel & WP</li>
                 </ul>
               </div>
             </FadeIn>
@@ -198,32 +214,30 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" style={{ background: 'var(--bg-secondary)' }}>
+      <section id="projects" style={{ background: 'var(--color-pink)', borderTop: 'var(--border-thick)', borderBottom: 'var(--border-thick)' }}>
         <div className="container">
           <FadeIn>
-            <h2 className="section-title">Featured Projects</h2>
+            <h2 className="section-title" style={{ color: '#fff' }}>Featured Projects</h2>
           </FadeIn>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
             {/* Project 1 */}
             <FadeIn>
-              <div className="glass-panel" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', overflow: 'hidden' }}>
-                <div style={{ background: 'linear-gradient(45deg, #1e1e1e, #2a2a2a)', minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                   {/* Placeholder for project image */}
-                   <Smartphone size={80} color="rgba(255,255,255,0.1)" />
+              <div className="brutalist-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', overflow: 'hidden' }}>
+                <div style={{ background: 'var(--color-yellow)', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: 'var(--border-thick)' }}>
+                   <Smartphone size={100} color="#1A1A1A" />
                 </div>
-                <div style={{ padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Hyper Local Chat App</h3>
-                  <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+                <div style={{ padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: '#fff' }}>
+                  <h3 className="shrikhand" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Hyper Local Chat App</h3>
+                  <p style={{ fontWeight: '600', fontSize: '1.1rem', marginBottom: '2rem' }}>
                     A location-based social application where users nearby can discover each other and chat seamlessly without sharing phone numbers.
                   </p>
-                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
-                    <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(59, 130, 246, 0.1)', color: 'var(--accent-primary)', borderRadius: '20px', fontSize: '0.85rem' }}>Flutter</span>
-                    <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(139, 92, 246, 0.1)', color: 'var(--accent-secondary)', borderRadius: '20px', fontSize: '0.85rem' }}>Firebase</span>
-                    <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(255, 255, 255, 0.1)', color: '#fff', borderRadius: '20px', fontSize: '0.85rem' }}>Geolocation</span>
+                  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-blue)', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Flutter</span>
+                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-purple)', color: 'white', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Firebase</span>
                   </div>
                   <div>
-                    <a href="#" className="btn-secondary">View Details</a>
+                    <a href="#" className="btn-primary" style={{ background: 'var(--color-yellow)' }}>View Details</a>
                   </div>
                 </div>
               </div>
@@ -231,22 +245,21 @@ function App() {
 
             {/* Project 2 */}
             <FadeIn>
-              <div className="glass-panel" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', overflow: 'hidden' }}>
-                <div style={{ padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>Digital Ghalla Mandi</h3>
-                  <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+              <div className="brutalist-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', overflow: 'hidden' }}>
+                <div style={{ padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: '#fff', borderRight: 'var(--border-thick)' }}>
+                  <h3 className="shrikhand" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Digital Ghalla Mandi</h3>
+                  <p style={{ fontWeight: '600', fontSize: '1.1rem', marginBottom: '2rem' }}>
                     A comprehensive agricultural marketplace application connecting farmers with buyers to easily trade crops.
                   </p>
-                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
-                    <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(59, 130, 246, 0.1)', color: 'var(--accent-primary)', borderRadius: '20px', fontSize: '0.85rem' }}>Flutter</span>
-                    <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(0, 0, 0, 0.05)', color: 'var(--text-primary)', borderRadius: '20px', fontSize: '0.85rem' }}>REST API</span>
-                    <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(139, 92, 246, 0.1)', color: 'var(--accent-secondary)', borderRadius: '20px', fontSize: '0.85rem' }}>E-commerce</span>
+                  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-blue)', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Flutter</span>
+                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-yellow)', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>REST API</span>
                   </div>
                   <div>
-                    <a href="#" className="btn-secondary">View Details</a>
+                    <a href="#" className="btn-primary" style={{ background: 'var(--color-purple)', color: '#fff' }}>View Details</a>
                   </div>
                 </div>
-                <div style={{ background: '#f0f0f0', minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
+                <div style={{ background: '#f0f0f0', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
                    <img src="/dgm-logo.jpeg" alt="Digital Ghalla Mandi Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
               </div>
@@ -254,22 +267,21 @@ function App() {
 
             {/* Project 3 */}
             <FadeIn>
-              <div className="glass-panel" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', overflow: 'hidden' }}>
-                <div style={{ background: 'linear-gradient(45deg, #1e1e1e, #2a2a2a)', minHeight: '300px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                   {/* Placeholder for project image */}
-                   <Smartphone size={80} color="rgba(255,255,255,0.1)" />
+              <div className="brutalist-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', overflow: 'hidden' }}>
+                <div style={{ background: 'var(--color-blue)', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: 'var(--border-thick)' }}>
+                   <Smartphone size={100} color="#1A1A1A" />
                 </div>
-                <div style={{ padding: '3rem', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <h3 style={{ fontSize: '2rem', marginBottom: '1rem' }}>My Pakistan</h3>
-                  <p style={{ color: 'var(--text-secondary)', marginBottom: '1.5rem' }}>
+                <div style={{ padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: '#fff' }}>
+                  <h3 className="shrikhand" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>My Pakistan</h3>
+                  <p style={{ fontWeight: '600', fontSize: '1.1rem', marginBottom: '2rem' }}>
                     A Flutter application connected with Firebase designed for local audiences with real-time updates and interactive features.
                   </p>
-                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
-                    <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(59, 130, 246, 0.1)', color: 'var(--accent-primary)', borderRadius: '20px', fontSize: '0.85rem' }}>Flutter</span>
-                    <span style={{ padding: '0.25rem 0.75rem', background: 'rgba(139, 92, 246, 0.1)', color: 'var(--accent-secondary)', borderRadius: '20px', fontSize: '0.85rem' }}>Firebase</span>
+                  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-blue)', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Flutter</span>
+                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-purple)', color: 'white', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Firebase</span>
                   </div>
                   <div>
-                    <a href="#" className="btn-secondary">View Details</a>
+                    <a href="#" className="btn-primary" style={{ background: 'var(--color-pink)', color: '#fff' }}>View Details</a>
                   </div>
                 </div>
               </div>
@@ -284,38 +296,38 @@ function App() {
           <FadeIn>
             <h2 className="section-title">Work Experience</h2>
           </FadeIn>
-          <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '2rem' }}>
+          <div style={{ maxWidth: '800px', margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '3rem' }}>
             
             <FadeIn direction="up">
-              <div className="glass-panel" style={{ padding: '2rem', borderLeft: '4px solid var(--accent-primary)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', marginBottom: '1rem' }}>
+              <div className="brutalist-card" style={{ padding: '3rem', background: '#fff' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', marginBottom: '2rem' }}>
                   <div>
-                    <h3 style={{ fontSize: '1.4rem' }}>State Life Insurance Sales</h3>
-                    <p style={{ color: 'var(--accent-primary)', fontWeight: '500' }}>State Life Insurance</p>
+                    <h3 className="shrikhand" style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>State Life Insurance Sales</h3>
+                    <p style={{ color: 'var(--color-purple)', fontWeight: '800', fontSize: '1.2rem', textTransform: 'uppercase' }}>State Life Insurance</p>
                   </div>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', padding: '0.2rem 0.8rem', background: 'rgba(255,255,255,0.05)', borderRadius: '15px' }}>2 Years</span>
+                  <span style={{ fontWeight: '800', fontSize: '1rem', padding: '0.5rem 1rem', background: 'var(--color-yellow)', border: 'var(--border-thick)', borderRadius: '8px', boxShadow: '2px 2px 0 #1A1A1A' }}>2 Years</span>
                 </div>
-                <ul style={{ color: 'var(--text-secondary)', listStyleType: 'disc', paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <li>Met with clients to understand their needs and explain complex insurance products.</li>
-                  <li>Successfully sold policies and built long-lasting customer relationships.</li>
-                  <li>Developed strong communication and negotiation skills crucial for freelancing and consulting.</li>
+                <ul style={{ fontWeight: '600', fontSize: '1.1rem', paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <li style={{ listStyleType: 'square' }}>Met with clients to understand their needs and explain complex insurance products.</li>
+                  <li style={{ listStyleType: 'square' }}>Successfully sold policies and built long-lasting customer relationships.</li>
+                  <li style={{ listStyleType: 'square' }}>Developed strong communication and negotiation skills crucial for freelancing and consulting.</li>
                 </ul>
               </div>
             </FadeIn>
 
             <FadeIn direction="up" delay={0.2}>
-              <div className="glass-panel" style={{ padding: '2rem', borderLeft: '4px solid var(--accent-secondary)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', marginBottom: '1rem' }}>
+              <div className="brutalist-card" style={{ padding: '3rem', background: '#fff' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', marginBottom: '2rem' }}>
                   <div>
-                    <h3 style={{ fontSize: '1.4rem' }}>Customer Service Representative</h3>
-                    <p style={{ color: 'var(--accent-secondary)', fontWeight: '500' }}>Pak E Services</p>
+                    <h3 className="shrikhand" style={{ fontSize: '1.8rem', marginBottom: '0.5rem' }}>Customer Service Rep</h3>
+                    <p style={{ color: 'var(--color-pink)', fontWeight: '800', fontSize: '1.2rem', textTransform: 'uppercase' }}>Pak E Services</p>
                   </div>
-                  <span style={{ color: 'var(--text-secondary)', fontSize: '0.9rem', padding: '0.2rem 0.8rem', background: 'rgba(255,255,255,0.05)', borderRadius: '15px' }}>6 Months</span>
+                  <span style={{ fontWeight: '800', fontSize: '1rem', padding: '0.5rem 1rem', background: 'var(--color-blue)', border: 'var(--border-thick)', borderRadius: '8px', boxShadow: '2px 2px 0 #1A1A1A' }}>6 Months</span>
                 </div>
-                <ul style={{ color: 'var(--text-secondary)', listStyleType: 'disc', paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  <li>Handled customer requests and provided comprehensive online services.</li>
-                  <li>Resolved general customer support issues efficiently and professionally.</li>
-                  <li>Gained practical experience in client interaction and problem-solving.</li>
+                <ul style={{ fontWeight: '600', fontSize: '1.1rem', paddingLeft: '1.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  <li style={{ listStyleType: 'square' }}>Handled customer requests and provided comprehensive online services.</li>
+                  <li style={{ listStyleType: 'square' }}>Resolved general customer support issues efficiently and professionally.</li>
+                  <li style={{ listStyleType: 'square' }}>Gained practical experience in client interaction and problem-solving.</li>
                 </ul>
               </div>
             </FadeIn>
@@ -325,25 +337,25 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" style={{ background: 'var(--bg-secondary)', borderTop: '1px solid var(--glass-border)' }}>
+      <section id="contact" style={{ background: 'var(--color-yellow)', borderTop: 'var(--border-thick)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <FadeIn>
-            <h2 className="section-title">Let's Work Together</h2>
-            <p style={{ color: 'var(--text-secondary)', maxWidth: '600px', margin: '0 auto 3rem', fontSize: '1.1rem' }}>
+            <h2 className="section-title" style={{ color: '#1A1A1A', textShadow: '4px 4px 0 #fff' }}>Let's Work Together</h2>
+            <p style={{ fontWeight: '700', maxWidth: '600px', margin: '0 auto 4rem', fontSize: '1.3rem' }}>
               I'm currently looking for a stable software job, remote freelancing work, and exciting new projects. Whether you have a question or just want to say hi, I'll try my best to get back to you!
             </p>
           </FadeIn>
           
           <FadeIn delay={0.2}>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-              <a href="mailto:ahmadasad@example.com" className="btn-primary" style={{ padding: '1rem 2rem' }}>
-                <Mail size={20} /> Say Hello
+            <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
+              <a href="mailto:ahmadasad@example.com" className="btn-primary" style={{ padding: '1.5rem 3rem', background: 'var(--color-pink)', color: '#fff' }}>
+                <Mail size={24} /> Say Hello
               </a>
-              <a href="https://github.com/asad-arch" target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ padding: '1rem 2rem' }}>
-                <Code2 size={20} /> GitHub
+              <a href="https://github.com/asad-arch" target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ padding: '1.5rem 3rem' }}>
+                <Code2 size={24} /> GitHub
               </a>
-              <a href="https://www.linkedin.com/in/ahmad-asad-6079b9358" target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ padding: '1rem 2rem' }}>
-                <Briefcase size={20} /> LinkedIn
+              <a href="https://www.linkedin.com/in/ahmad-asad-6079b9358" target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ padding: '1.5rem 3rem' }}>
+                <Briefcase size={24} /> LinkedIn
               </a>
             </div>
           </FadeIn>
@@ -351,7 +363,7 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer style={{ padding: '2rem 0', textAlign: 'center', borderTop: '1px solid var(--glass-border)', color: 'var(--text-secondary)', fontSize: '0.9rem' }}>
+      <footer style={{ padding: '3rem 0', textAlign: 'center', background: '#1A1A1A', color: '#fff', fontSize: '1.1rem', fontWeight: '600' }}>
         <p>© {new Date().getFullYear()} Ahmad Asad. Built with React & Vite.</p>
       </footer>
     </div>
