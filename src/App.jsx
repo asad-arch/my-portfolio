@@ -348,7 +348,7 @@ function App() {
           
           <FadeIn delay={0.2}>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-              <a href="mailto:ahmadasad@example.com" className="btn-primary" style={{ padding: '1.5rem 3rem', background: 'var(--color-pink)', color: '#fff' }}>
+              <a href="mailto:yar515165@gmail.com" className="btn-primary" style={{ padding: '1.5rem 3rem', background: 'var(--color-pink)', color: '#fff' }}>
                 <Mail size={24} /> Say Hello
               </a>
               <a href="https://github.com/asad-arch" target="_blank" rel="noopener noreferrer" className="btn-secondary" style={{ padding: '1.5rem 3rem' }}>
