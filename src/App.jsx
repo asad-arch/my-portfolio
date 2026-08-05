@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { motion, useScroll, useSpring } from 'framer-motion';
+import { motion, useScroll, useSpring, AnimatePresence } from 'framer-motion';
 import { Mail, Code2, Smartphone, Database, Terminal, Briefcase, User, MapPin } from 'lucide-react';
 
 const FadeIn = ({ children, delay = 0, direction = 'up' }) => {
@@ -22,6 +22,150 @@ const FadeIn = ({ children, delay = 0, direction = 'up' }) => {
   );
 };
 
+const projectsData = [
+  {
+    id: 'hyperchat',
+    title: 'HyperChat',
+    shortDesc: 'A Flutter-based hyper-local messaging application that enables users to discover and communicate with nearby people through real-time chat, voice notes, and location-based services using Firebase.',
+    image: '/hyperchat-logo.png',
+    tags: ['Flutter', 'Firebase'],
+    problem: 'Most messaging apps require users to know each other\'s phone numbers or usernames. HyperChat allows users to communicate with people nearby instantly based on their location.',
+    features: [
+      'Real-time nearby user discovery (1–3 km radius)',
+      'User registration and authentication',
+      'Real-time text messaging',
+      'Voice note & image sharing',
+      'Audio and video calling',
+      'Location-based matching'
+    ],
+    role: [
+      'Designed the complete application architecture',
+      'Developed the frontend using Flutter',
+      'Integrated Firebase backend services',
+      'Designed the UI/UX'
+    ],
+    tagColors: ['var(--color-blue)', 'var(--color-purple)'],
+    buttonColor: 'var(--color-yellow)'
+  },
+  {
+    id: 'dgm',
+    title: 'Digital Ghalla Mandi',
+    shortDesc: 'A digital agricultural marketplace built with Flutter and Firebase that connects farmers and buyers, enabling online crop listings, price discovery, and direct communication.',
+    image: '/dgm-logo.jpeg',
+    tags: ['Flutter', 'Firebase'],
+    problem: 'Traditional grain markets rely on physical visits and middlemen. Farmers often struggle to reach buyers and compare prices. Digital Ghalla Mandi helps bring transparency and wider market access.',
+    features: [
+      'Farmer & Buyer registration',
+      'Product and Price listings',
+      'Crop categories & search',
+      'Direct buyer-seller communication',
+      'Favorites/Wishlist'
+    ],
+    role: [
+      'Designed and developed the mobile application',
+      'Built the complete Flutter frontend',
+      'Designed the database structure',
+      'Implemented product management'
+    ],
+    tagColors: ['var(--color-blue)', 'var(--color-yellow)'],
+    buttonColor: 'var(--color-purple)'
+  },
+  {
+    id: 'mypakistan',
+    title: 'My Pakistan',
+    shortDesc: 'A Flutter mobile application that centralizes government information, emergency contacts, and public services, providing Pakistani citizens with easy access to essential resources.',
+    image: '/mypakistan-logo.jpg',
+    tags: ['Flutter', 'Firebase'],
+    problem: 'Government information is often spread across multiple websites, making it difficult for users to find the right service quickly. My Pakistan aims to provide a centralized and user-friendly platform.',
+    features: [
+      'Government department information',
+      'Emergency contact numbers',
+      'Public service information',
+      'User-friendly navigation',
+      'Secure user authentication'
+    ],
+    role: [
+      'Planned the application concept',
+      'Developed the complete Flutter application',
+      'Designed the user interface',
+      'Integrated Firebase backend'
+    ],
+    tagColors: ['var(--color-blue)', 'var(--color-purple)'],
+    buttonColor: 'var(--color-pink)'
+  }
+];
+
+const ProjectModal = ({ project, onClose }) => {
+  if (!project) return null;
+
+  return (
+    <div style={{
+      position: 'fixed', top: 0, left: 0, right: 0, bottom: 0,
+      background: 'rgba(26, 26, 26, 0.8)', zIndex: 1000,
+      display: 'flex', alignItems: 'center', justifyContent: 'center',
+      padding: '1rem',
+      backdropFilter: 'blur(4px)'
+    }} onClick={onClose}>
+      <motion.div 
+        initial={{ y: 50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: 50, opacity: 0 }}
+        onClick={e => e.stopPropagation()}
+        className="brutalist-card"
+        style={{
+          background: 'var(--bg-primary)',
+          width: '100%', maxWidth: '800px',
+          maxHeight: '90vh', overflowY: 'auto',
+          position: 'relative',
+          padding: 0
+        }}
+      >
+        <button onClick={onClose} style={{
+          position: 'absolute', top: '1rem', right: '1rem',
+          background: 'var(--color-pink)', border: 'var(--border-thick)',
+          width: '40px', height: '40px', borderRadius: '50%',
+          fontWeight: 'bold', fontSize: '1.2rem', cursor: 'pointer',
+          boxShadow: '2px 2px 0 #1A1A1A',
+          display: 'flex', alignItems: 'center', justifyContent: 'center',
+          zIndex: 10
+        }}>X</button>
+        
+        <div style={{ height: '300px', borderBottom: 'var(--border-thick)', background: '#fff' }}>
+          <img src={project.image} alt={project.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        </div>
+        
+        <div style={{ padding: '3rem' }}>
+          <h2 className="shrikhand" style={{ fontSize: '3rem', marginBottom: '1rem', color: 'var(--color-purple)' }}>{project.title}</h2>
+          
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '2rem' }}>
+            {project.tags.map((tag, i) => (
+              <span key={i} style={{ padding: '0.5rem 1rem', background: project.tagColors[i % project.tagColors.length], color: project.tagColors[i % project.tagColors.length] === 'var(--color-purple)' ? '#fff' : '#1A1A1A', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>{tag}</span>
+            ))}
+          </div>
+
+          <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '0.5rem' }}>The Problem</h3>
+          <p style={{ fontSize: '1.1rem', marginBottom: '2rem', fontWeight: '600', color: 'var(--text-secondary)' }}>{project.problem}</p>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+            <div>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '1rem', borderBottom: '4px solid var(--color-yellow)', display: 'inline-block' }}>Key Features</h3>
+              <ul style={{ paddingLeft: '1.5rem', fontWeight: '600' }}>
+                {project.features.map((f, i) => <li key={i} style={{ marginBottom: '0.5rem' }}>{f}</li>)}
+              </ul>
+            </div>
+            <div>
+              <h3 style={{ fontSize: '1.5rem', fontWeight: '800', marginBottom: '1rem', borderBottom: '4px solid var(--color-blue)', display: 'inline-block' }}>My Role</h3>
+              <ul style={{ paddingLeft: '1.5rem', fontWeight: '600' }}>
+                {project.role.map((r, i) => <li key={i} style={{ marginBottom: '0.5rem' }}>{r}</li>)}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+};
+
 function App() {
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
@@ -30,8 +174,25 @@ function App() {
     restDelta: 0.001
   });
 
+  const [selectedProject, setSelectedProject] = useState(null);
+  
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => { document.body.style.overflow = 'unset'; };
+  }, [selectedProject]);
+
   return (
     <div className="app-container">
+      <AnimatePresence>
+        {selectedProject && (
+          <ProjectModal project={selectedProject} onClose={() => setSelectedProject(null)} />
+        )}
+      </AnimatePresence>
+
       {/* Progress Bar */}
       <motion.div
         style={{
@@ -221,71 +382,27 @@ function App() {
           </FadeIn>
           
           <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
-            {/* Project 1 */}
-            <FadeIn>
-              <div className="brutalist-card project-grid">
-                <div style={{ background: '#fff', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: 'var(--border-thick)' }}>
-                   <img src="/hyperchat-logo.png" alt="HyperChat Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div style={{ padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: '#fff' }}>
-                  <h3 className="shrikhand" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>HyperChat</h3>
-                  <p style={{ fontWeight: '600', fontSize: '1.1rem', marginBottom: '2rem' }}>
-                    A Flutter-based hyper-local messaging application that enables users to discover and communicate with nearby people through real-time chat, voice notes, and location-based services using Firebase.
-                  </p>
-                  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
-                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-blue)', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Flutter</span>
-                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-purple)', color: 'white', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Firebase</span>
+            {projectsData.map((project, index) => (
+              <FadeIn key={project.id}>
+                <div className="brutalist-card project-grid">
+                  <div style={{ background: '#fff', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: 'var(--border-thick)' }}>
+                     <img src={project.image} alt={`${project.title} Logo`} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                   </div>
-                  <div>
-                    <a href="#" className="btn-primary" style={{ background: 'var(--color-yellow)' }}>View Details</a>
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
-
-            {/* Project 2 */}
-            <FadeIn>
-              <div className="brutalist-card project-grid">
-                <div style={{ padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: '#fff', borderRight: 'var(--border-thick)' }}>
-                  <h3 className="shrikhand" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Digital Ghalla Mandi</h3>
-                  <p style={{ fontWeight: '600', fontSize: '1.1rem', marginBottom: '2rem' }}>
-                    A digital agricultural marketplace built with Flutter and Firebase that connects farmers and buyers, enabling online crop listings, price discovery, and direct communication.
-                  </p>
-                  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
-                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-blue)', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Flutter</span>
-                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-yellow)', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Firebase</span>
-                  </div>
-                  <div>
-                    <a href="#" className="btn-primary" style={{ background: 'var(--color-purple)', color: '#fff' }}>View Details</a>
+                  <div style={{ padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: '#fff' }}>
+                    <h3 className="shrikhand" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{project.title}</h3>
+                    <p style={{ fontWeight: '600', fontSize: '1.1rem', marginBottom: '2rem' }}>{project.shortDesc}</p>
+                    <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
+                      {project.tags.map((tag, i) => (
+                        <span key={i} style={{ padding: '0.5rem 1rem', background: project.tagColors[i % project.tagColors.length], color: project.tagColors[i % project.tagColors.length] === 'var(--color-purple)' ? 'white' : '#1A1A1A', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>{tag}</span>
+                      ))}
+                    </div>
+                    <div>
+                      <button onClick={(e) => { e.preventDefault(); setSelectedProject(project); }} className="btn-primary" style={{ background: project.buttonColor, color: project.buttonColor === 'var(--color-yellow)' ? '#1A1A1A' : '#fff' }}>View Details</button>
+                    </div>
                   </div>
                 </div>
-                <div style={{ background: '#fff', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', overflow: 'hidden' }}>
-                   <img src="/dgm-logo.jpeg" alt="Digital Ghalla Mandi Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-              </div>
-            </FadeIn>
-
-            {/* Project 3 */}
-            <FadeIn>
-              <div className="brutalist-card project-grid">
-                <div style={{ background: '#fff', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: 'var(--border-thick)' }}>
-                   <img src="/mypakistan-logo.jpg" alt="My Pakistan Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                </div>
-                <div style={{ padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: '#fff' }}>
-                  <h3 className="shrikhand" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>My Pakistan</h3>
-                  <p style={{ fontWeight: '600', fontSize: '1.1rem', marginBottom: '2rem' }}>
-                    A Flutter mobile application that centralizes government information, emergency contacts, and public services, providing Pakistani citizens with easy access to essential resources.
-                  </p>
-                  <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', marginBottom: '3rem' }}>
-                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-blue)', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Flutter</span>
-                    <span style={{ padding: '0.5rem 1rem', background: 'var(--color-purple)', color: 'white', border: 'var(--border-thick)', borderRadius: '8px', fontWeight: '800', boxShadow: '2px 2px 0 #1A1A1A' }}>Firebase</span>
-                  </div>
-                  <div>
-                    <a href="#" className="btn-primary" style={{ background: 'var(--color-pink)', color: '#fff' }}>View Details</a>
-                  </div>
-                </div>
-              </div>
-            </FadeIn>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
