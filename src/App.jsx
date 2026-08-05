@@ -61,7 +61,7 @@ function App() {
       }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
           <div style={{ fontSize: '2rem', fontWeight: '800', color: '#1A1A1A' }} className="shrikhand">AA.</div>
-          <ul style={{ display: 'flex', gap: '2rem', display: window.innerWidth < 768 ? 'none' : 'flex' }}>
+          <ul className="nav-links">
             <li><a href="#about" style={{ fontWeight: '700', textTransform: 'uppercase', transition: 'transform 0.2s' }} onMouseOver={e=>e.target.style.transform='translateY(-2px)'} onMouseOut={e=>e.target.style.transform='none'}>About</a></li>
             <li><a href="#skills" style={{ fontWeight: '700', textTransform: 'uppercase', transition: 'transform 0.2s' }} onMouseOver={e=>e.target.style.transform='translateY(-2px)'} onMouseOut={e=>e.target.style.transform='none'}>Skills</a></li>
             <li><a href="#projects" style={{ fontWeight: '700', textTransform: 'uppercase', transition: 'transform 0.2s' }} onMouseOver={e=>e.target.style.transform='translateY(-2px)'} onMouseOut={e=>e.target.style.transform='none'}>Projects</a></li>
@@ -223,7 +223,7 @@ function App() {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '5rem' }}>
             {/* Project 1 */}
             <FadeIn>
-              <div className="brutalist-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', overflow: 'hidden' }}>
+              <div className="brutalist-card project-grid">
                 <div style={{ background: '#fff', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: 'var(--border-thick)' }}>
                    <img src="/hyperchat-logo.png" alt="HyperChat Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
@@ -245,7 +245,7 @@ function App() {
 
             {/* Project 2 */}
             <FadeIn>
-              <div className="brutalist-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', overflow: 'hidden' }}>
+              <div className="brutalist-card project-grid">
                 <div style={{ padding: '4rem', display: 'flex', flexDirection: 'column', justifyContent: 'center', background: '#fff', borderRight: 'var(--border-thick)' }}>
                   <h3 className="shrikhand" style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>Digital Ghalla Mandi</h3>
                   <p style={{ fontWeight: '600', fontSize: '1.1rem', marginBottom: '2rem' }}>
@@ -267,7 +267,7 @@ function App() {
 
             {/* Project 3 */}
             <FadeIn>
-              <div className="brutalist-card" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0', overflow: 'hidden' }}>
+              <div className="brutalist-card project-grid">
                 <div style={{ background: '#fff', minHeight: '350px', display: 'flex', alignItems: 'center', justifyContent: 'center', borderRight: 'var(--border-thick)' }}>
                    <img src="/mypakistan-logo.jpg" alt="My Pakistan Logo" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
